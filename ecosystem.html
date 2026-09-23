@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosystem — KORE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="ecosystem-custom.css">
+</head>
+<body class="luxury-dark">
+
+    <div class="hololens-cone" id="light-cone"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="site-header reveal">
+        <div class="logo"><a href="index.html">KORE.</a></div>
+        <nav class="nav-links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="architecture.html">Architecture</a>
+            <a href="ecosystem.html" class="active-link" style="color: #fff;">Ecosystem</a>
+            <a href="vision.html">Vision</a>
+        </nav>
+        <div class="header-action">
+            <span class="mono-micro pulse-glow">SYS.ECO // MODULES_ONLINE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- ACT I: HERO CON STATISTICHE INTEGRATE -->
+        <section class="eco-hero">
+            <div class="container eco-hero-grid">
+                <div>
+                    <span class="mono-micro reveal">01 — DIGITAL CONSTELLATION</span>
+                    <h1 class="reveal delay-1">
+                        An integrated grid of <br>
+                        <span class="serif-italic">computational primitives</span> <br>
+                        built for scale.
+                    </h1>
+                    <p class="subtitle reveal delay-2">
+                        Explore the modular packages designed to plug directly into the Kore core runtime, enabling seamless multi-region deployment and zero-latency execution.
+                    </p>
+                </div>
+                <div class="reveal delay-3 eco-stat-box">
+                    <div class="eco-stat-top">
+                        <span class="mono-micro">PACKAGE REGISTRY</span>
+                        <div class="pulsing-led"></div>
+                    </div>
+                    <div class="eco-stat-content">
+                        <div class="e-metric">
+                            <span class="mono-micro">TOTAL MODULES</span>
+                            <span class="mono-micro text-white">24 Packages</span>
+                        </div>
+                        <div class="e-metric">
+                            <span class="mono-micro">DOWNLOADS / WK</span>
+                            <span class="mono-micro text-white">1.4M+</span>
+                        </div>
+                        <div class="e-metric">
+                            <span class="mono-micro">SECURITY AUDIT</span>
+                            <span class="mono-micro text-white">100% Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT II: INTERACTIVE ECOSYSTEM ASSEMBLER (Il pezzo forte) -->
+        <section class="eco-assembler-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">02 — INTERACTIVE STACK BUILDER</span>
+                    <h2>Compose Your <br><span class="serif-italic">Kore Runtime</span></h2>
+                    <p class="eco-desc">Toggle modules below to dynamically assemble your custom architecture configuration manifest in real time.</p>
+                </div>
+
+                <div class="assembler-workspace reveal delay-1">
+                    <!-- Lista dei moduli attivabili -->
+                    <div class="modules-selector-grid">
+                        <div class="mod-toggle-card active" data-mod="core">
+                            <div class="mod-info">
+                                <span class="mono-micro text-white">@kore/core</span>
+                                <h4>Deterministic Runtime</h4>
+                            </div>
+                            <div class="mod-check">ACTIVE</div>
+                        </div>
+
+                        <div class="mod-toggle-card active" data-mod="mesh">
+                            <div class="mod-info">
+                                <span class="mono-micro text-white">@kore/mesh</span>
+                                <h4>Sub-Atomic P2P Grid</h4>
+                            </div>
+                            <div class="mod-check">ACTIVE</div>
+                        </div>
+
+                        <div class="mod-toggle-card" data-mod="neural">
+                            <div class="mod-info">
+                                <span class="mono-micro text-white">@kore/neural</span>
+                                <h4>AI Compute Shards</h4>
+                            </div>
+                            <div class="mod-check">OFF</div>
+                        </div>
+
+                        <div class="mod-toggle-card" data-mod="vault">
+                            <div class="mod-info">
+                                <span class="mono-micro text-white">@kore/vault</span>
+                                <h4>Encrypted State Storage</h4>
+                            </div>
+                            <div class="mod-check">OFF</div>
+                        </div>
+                    </div>
+
+                    <!-- Output del manifest generato -->
+                    <div class="manifest-output-box">
+                        <div class="manifest-top">
+                            <span class="mono-micro">Generated Manifest: kore.config.json</span>
+                            <button class="copy-btn" id="copy-manifest-btn">COPY CONFIG</button>
+                        </div>
+                        <pre><code id="manifest-code">{
+  "version": "2.6.0",
+  "engine": "kore-silicon",
+  "modules": [
+    "@kore/core",
+    "@kore/mesh"
+  ],
+  "optimization": "maximum-determinism"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT III: GRID DEI PACCHETTI PRINCIPALI -->
+        <section class="eco-packages-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">03 — CORE PACKAGES</span>
+                    <h2>Ecosystem <br><span class="serif-italic">Directory</span></h2>
+                </div>
+
+                <div class="pkg-search-bar reveal delay-1">
+                    <input type="text" id="pkg-search-input" placeholder="Search packages — try &quot;gpu&quot;, &quot;mesh&quot;, &quot;auth&quot;…" class="magnetic">
+                    <span class="mono-micro" id="pkg-search-count">6 PACKAGES</span>
+                </div>
+
+                <div class="packages-grid reveal delay-1" id="packages-grid">
+                    <div class="pkg-card" data-spotlight data-tilt data-name="Kore Engine" data-desc="The foundational deterministic runtime written in Rust. Guarantees zero runtime drift and hardware-level performance optimization.">
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">PACKAGE // 01</span>
+                        <h3>Kore Engine</h3>
+                        <p>The foundational deterministic runtime written in Rust. Guarantees zero runtime drift and hardware-level performance optimization.</p>
+                        <div class="pkg-install">
+                            <code>npm i @kore/engine</code>
+                            <button class="pkg-copy-btn" data-copy="npm i @kore/engine">COPY</button>
+                        </div>
+                        <div class="pkg-footer">
+                            <span class="mono-micro text-white">v2.6.0 Stable</span>
+                            <a href="#" class="pkg-link">Docs →</a>
+                        </div>
+                    </div>
+
+                    <div class="pkg-card" data-spotlight data-tilt data-name="Kore Mesh Grid" data-desc="Distributed sub-atomic synchronization engine that coordinates multi-region cluster nodes instantly with zero propagation lag.">
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">PACKAGE // 02</span>
+                        <h3>Kore Mesh Grid</h3>
+                        <p>Distributed sub-atomic synchronization engine that coordinates multi-region cluster nodes instantly with zero propagation lag.</p>
+                        <div class="pkg-install">
+                            <code>npm i @kore/mesh</code>
+                            <button class="pkg-copy-btn" data-copy="npm i @kore/mesh">COPY</button>
+                        </div>
+                        <div class="pkg-footer">
+                            <span class="mono-micro text-white">v1.9.4 Stable</span>
+                            <a href="#" class="pkg-link">Docs →</a>
+                        </div>
+                    </div>
+
+                    <div class="pkg-card" data-spotlight data-tilt data-name="Kore Vision GPU" data-desc="Hardware-accelerated graphics and compute shader pipeline built for high-frequency user interfaces and real-time data visualization.">
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">PACKAGE // 03</span>
+                        <h3>Kore Vision GPU</h3>
+                        <p>Hardware-accelerated graphics and compute shader pipeline built for high-frequency user interfaces and real-time data visualization.</p>
+                        <div class="pkg-install">
+                            <code>npm i @kore/vision</code>
+                            <button class="pkg-copy-btn" data-copy="npm i @kore/vision">COPY</button>
+                        </div>
+                        <div class="pkg-footer">
+                            <span class="mono-micro text-white">v3.0.1 Stable</span>
+                            <a href="#" class="pkg-link">Docs →</a>
+                        </div>
+                    </div>
+
+                    <div class="pkg-card" data-spotlight data-tilt data-name="Kore Vault" data-desc="Encrypted, hardware-backed state storage with zero-knowledge key rotation and sub-atomic write consistency across regions.">
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">PACKAGE // 04</span>
+                        <h3>Kore Vault</h3>
+                        <p>Encrypted, hardware-backed state storage with zero-knowledge key rotation and sub-atomic write consistency across regions.</p>
+                        <div class="pkg-install">
+                            <code>npm i @kore/vault</code>
+                            <button class="pkg-copy-btn" data-copy="npm i @kore/vault">COPY</button>
+                        </div>
+                        <div class="pkg-footer">
+                            <span class="mono-micro text-white">v1.2.7 Stable</span>
+                            <a href="#" class="pkg-link">Docs →</a>
+                        </div>
+                    </div>
+
+                    <div class="pkg-card" data-spotlight data-tilt data-name="Kore Neural" data-desc="AI compute shards for on-device inference, scheduled directly on the deterministic runtime with predictable latency envelopes.">
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">PACKAGE // 05</span>
+                        <h3>Kore Neural</h3>
+                        <p>AI compute shards for on-device inference, scheduled directly on the deterministic runtime with predictable latency envelopes.</p>
+                        <div class="pkg-install">
+                            <code>npm i @kore/neural</code>
+                            <button class="pkg-copy-btn" data-copy="npm i @kore/neural">COPY</button>
+                        </div>
+                        <div class="pkg-footer">
+                            <span class="mono-micro text-white">v0.9.3 Beta</span>
+                            <a href="#" class="pkg-link">Docs →</a>
+                        </div>
+                    </div>
+
+                    <div class="pkg-card" data-spotlight data-tilt data-name="Kore CLI" data-desc="A single native binary to scaffold, compile, and deploy Kore clusters — no runtime dependencies, no version drift.">
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">PACKAGE // 06</span>
+                        <h3>Kore CLI</h3>
+                        <p>A single native binary to scaffold, compile, and deploy Kore clusters — no runtime dependencies, no version drift.</p>
+                        <div class="pkg-install">
+                            <code>npm i -g @kore/cli</code>
+                            <button class="pkg-copy-btn" data-copy="npm i -g @kore/cli">COPY</button>
+                        </div>
+                        <div class="pkg-footer">
+                            <span class="mono-micro text-white">v4.1.0 Stable</span>
+                            <a href="#" class="pkg-link">Docs →</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="pkg-empty-state" id="pkg-empty-state">No packages match your search.</p>
+            </div>
+        </section>
+
+        <!-- ACT IV: PROCEED TO VISION -->
+        <section class="section-torus">
+            <div class="torus-container reveal">
+                <div class="torus-glow"></div>
+                <h2>Explore the future <br><span class="serif-italic">vision.</span></h2>
+                <a href="vision.html" class="elegant-btn magnetic">Proceed to Vision</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer reveal">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h1>KORE.</h1>
+                <p>Elegance in artificial computation.</p>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">INDEX</span>
+                <a href="index.html">Home</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="ecosystem.html">Ecosystem</a>
+                <a href="vision.html">Vision</a>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">NETWORK</span>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="mono-micro">© 2026 KORE INC.</span>
+            <span class="mono-micro">ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script src="ecosystem.js"></script>
+</body>
+</html>

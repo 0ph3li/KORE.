@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy — KORE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="philosophy-custom.css">
+</head>
+<body class="luxury-dark">
+
+    <div class="hololens-cone" id="light-cone"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="site-header reveal">
+        <div class="logo"><a href="index.html">KORE.</a></div>
+        <nav class="nav-links">
+            <a href="philosophy.html" class="active-link" style="color: #fff;">Philosophy</a>
+            <a href="architecture.html">Architecture</a>
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="vision.html">Vision</a>
+        </nav>
+        <div class="header-action">
+            <span class="mono-micro pulse-glow">SYS.PHILOSOPHY // ACTIVE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- ACT I: HERO CON TICKER ANIMATO INFINITO -->
+        <section class="phil-hero-extended">
+            <div class="container">
+                <span class="mono-micro reveal">01 — EPISTEMOLOGY OF SILICON</span>
+                <h1 class="reveal delay-1">
+                    Code is not written. <br>
+                    It is <span class="serif-italic">excavated</span> from <br>
+                    the laws of nature.
+                </h1>
+                <p class="subtitle reveal delay-2">
+                    Traditional software is an accumulation of accidental complexity. Kore treats architecture as an exact philosophical discipline where intent meets bare metal without friction.
+                </p>
+            </div>
+
+            <!-- Ticker infinito animato -->
+            <div class="infinite-ticker-container reveal delay-3">
+                <div class="ticker-track">
+                    <span>// ABSOLUTE DETERMINISM</span>
+                    <span>•</span>
+                    <span>ZERO RUNTIME ENTROPY</span>
+                    <span>•</span>
+                    <span>DIRECT SILICON MAPPING</span>
+                    <span>•</span>
+                    <span>PURE COGNITIVE INTENT</span>
+                    <span>•</span>
+                    <span>ABSOLUTE DETERMINISM</span>
+                    <span>•</span>
+                    <span>ZERO RUNTIME ENTROPY</span>
+                    <span>•</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT II: IL MANIFESTO ESPANSO (Grid interattiva con effetti spotlight) -->
+        <section class="phil-manifesto-deep">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">02 — THE FOUR PILLARS OF THOUGHT</span>
+                    <h2>Dismantling <span class="serif-italic">Complexity</span></h2>
+                </div>
+
+                <div class="pillars-grid-animated">
+                    <!-- Pillar 1 -->
+                    <div class="pillar-card reveal delay-1" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">AXIOM 01</span>
+                        <h3>Ontological Purity</h3>
+                        <p>Every abstraction layer introduces a lie. By collapsing unnecessary wrappers, Kore aligns application execution directly with physical computing limits.</p>
+                        <div class="pillar-code-preview">
+                            <code>fn collapse() -> PureState</code>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="pillar-card reveal delay-2" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">AXIOM 02</span>
+                        <h3>Anti-Entropy Protocol</h3>
+                        <p>Systems naturally degrade over time through unmonitored state changes. Our deterministic runtime guarantees invariant mathematical equilibrium forever.</p>
+                        <div class="pillar-code-preview">
+                            <code>entropy.purge(0.0)</code>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="pillar-card reveal delay-3" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">AXIOM 03</span>
+                        <h3>Cellular Distribution</h3>
+                        <p>Monoliths rot from the inside. Kore scales organically like biological tissue—autonomous nodes communicating via sub-atomic synchronization mesh.</p>
+                        <div class="pillar-code-preview">
+                            <code>cluster.divide_infinite()</code>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="pillar-card reveal delay-4" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">AXIOM 04</span>
+                        <h3>Zero-Latency Interface</h3>
+                        <p>Human thought operates at microsecond scales. The digital toolchain must reflect this speed without virtualization overhead or garbage collection pauses.</p>
+                        <div class="pillar-code-preview">
+                            <code>latency.override(0.00ms)</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT III: IL LABORATORIO DELL'ENTROPIA (Simulatore Interattivo vivo) -->
+        <section class="entropy-lab-section">
+            <div class="container entropy-layout">
+                <div class="reveal">
+                    <span class="mono-micro">03 — INTERACTIVE SIMULATION</span>
+                    <h2>The Entropy <br><span class="serif-italic">Sandbox</span></h2>
+                    <p class="phil-desc">Inject simulated architectural chaos into a live execution node and observe Kore's auto-healing deterministic compiler restore order in real time.</p>
+                    
+                    <div class="lab-controls">
+                        <button class="lab-btn active magnetic" id="inject-chaos-btn">Inject High Entropy</button>
+                        <button class="lab-btn magnetic" id="purge-chaos-btn">Force Kore Determinism</button>
+                    </div>
+                </div>
+
+                <div class="lab-monitor-box reveal delay-1">
+                    <div class="lab-topbar">
+                        <span class="mono-micro" id="lab-status-text">SYSTEM STATUS: OPTIMAL EQUILIBRIUM</span>
+                        <div class="pulsing-led" id="lab-led"></div>
+                    </div>
+                    <div class="lab-screen" id="lab-screen-content">
+                        <pre><code>[00:00:01] Initializing silicon substrate...
+[00:00:02] Checking register alignment... [OK]
+[00:00:03] Entropy index: 0.0001 (Stable)
+[00:00:04] Ready for cognitive execution.</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT IV: LA DIALETTICA SCORREVOLE (Timeline / Narrazione verticale profonda) -->
+        <section class="phil-timeline-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">04 — HISTORICAL EVOLUTION</span>
+                    <h2>From Patchwork to <br><span class="serif-italic">Architecture</span></h2>
+                </div>
+
+                <div class="timeline-stream">
+                    <div class="timeline-item reveal">
+                        <div class="t-number"><span class="mono-micro">1970 — 1995</span></div>
+                        <div class="t-body">
+                            <h3>The Era of Mechanical Proceduralism</h3>
+                            <p>Software was treated as a rigid set of instructions bolted directly onto metal. Functional, but restricted by primitive hardware limitations and localized memory states.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal delay-1">
+                        <div class="t-number"><span class="mono-micro">1995 — 2020</span></div>
+                        <div class="t-body">
+                            <h3>The Bloat of Abstraction Layers</h3>
+                            <p>The rise of massive frameworks, heavy runtimes, and virtual machines introduced immense developer velocity at the cost of catastrophic architectural entropy and latency.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal delay-2">
+                        <div class="t-number"><span class="mono-micro">2026+</span></div>
+                        <div class="t-body">
+                            <h3>The Kore Paradigm Shift</h3>
+                            <p>Erasing the boundary between human thought and machine execution. Mathematical determinism, zero-cost abstractions, and hardware-level synchronization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT V: THE COUNTER-ARGUMENT (Interactive Debate) -->
+        <section class="debate-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">05 — STEELMANNING THE OPPOSITION</span>
+                    <h2>The <span class="serif-italic">Counter-Argument</span></h2>
+                    <p class="phil-desc">Every axiom deserves a worthy adversary. Toggle between the two schools of thought and judge the tradeoff yourself.</p>
+                </div>
+
+                <div class="debate-wrapper reveal delay-1">
+                    <div class="debate-triggers">
+                        <button class="debate-btn active magnetic" data-debate="chaos">
+                            <span class="mono-micro">SCHOOL 01</span>
+                            <h4>Chaos Engineering</h4>
+                        </button>
+                        <button class="debate-btn magnetic" data-debate="kore">
+                            <span class="mono-micro">SCHOOL 02</span>
+                            <h4>Kore Determinism</h4>
+                        </button>
+                    </div>
+
+                    <div class="debate-viewer">
+                        <div class="debate-pane active" id="debate-chaos">
+                            <span class="mono-micro">POSITION</span>
+                            <h3>Embrace failure to build resilience.</h3>
+                            <p>Systems should be hardened by deliberately injecting faults in production — kill nodes, throttle networks, corrupt packets — so engineers are forced to design for the chaos that will inevitably arrive uninvited.</p>
+                            <div class="debate-verdict">
+                                <span class="mono-micro">KORE'S REBUTTAL</span>
+                                <p>Chaos testing is a symptom of architectures that cannot guarantee their own behavior. It is a discipline for coping with entropy — Kore's position is to remove the entropy at the source instead.</p>
+                            </div>
+                        </div>
+                        <div class="debate-pane" id="debate-kore">
+                            <span class="mono-micro">POSITION</span>
+                            <h3>Eliminate uncertainty before it exists.</h3>
+                            <p>If every allocation, every scheduling decision, and every network hop is resolved deterministically at compile time, there is no chaos left to be resilient against — the failure modes are proven closed, not merely survived.</p>
+                            <div class="debate-verdict">
+                                <span class="mono-micro">THE HONEST TRADEOFF</span>
+                                <p>Determinism demands upfront rigor: every dependency must be known and bounded ahead of time. It trades runtime flexibility for compile-time proof — a fair price, in our view, for zero-surprise production systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT VI: CITAZIONE D'AUTORE CON EFFETTO PARALLASSE / GLOW -->
+        <section class="quote-canvas-section">
+            <div class="container quote-content-center reveal">
+                <span class="mono-micro">06 — FINAL AXIOM</span>
+                <blockquote>
+                    "We do not build software to run on computers. <br>
+                    We build software to <span class="serif-italic">expand the boundaries</span> of human reason."
+                </blockquote>
+                <div class="author-tag">
+                    <span class="mono-micro">KORE FOUNDATIONAL RESEARCH GROUP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT VII: TORUS LOOP -->
+        <section class="section-torus">
+            <div class="torus-container reveal">
+                <div class="torus-glow"></div>
+                <h2>Ready to inspect <br><span class="serif-italic">the architecture?</span></h2>
+                <a href="architecture.html" class="elegant-btn magnetic">Proceed to Architecture</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer reveal">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h1>KORE.</h1>
+                <p>Elegance in artificial computation.</p>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">INDEX</span>
+                <a href="index.html">Home</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="ecosystem.html">Ecosystem</a>
+                <a href="vision.html">Vision</a>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">NETWORK</span>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="mono-micro">© 2026 KORE INC.</span>
+            <span class="mono-micro">ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script src="philosophy.js"></script>
+</body>
+</html>

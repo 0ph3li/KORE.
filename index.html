@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KORE — Elegance in Code & Architecture</title>
+    
+    <!-- Tipografia di Alta Gamma: Instrument Serif, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body class="luxury-dark">
+
+    <!-- Hololens: Cono di luce fluido che segue il mouse -->
+    <div class="hololens-cone" id="light-cone"></div>
+
+    <!-- Rumore di fondo per texture tattile -->
+    <div class="noise-overlay"></div>
+
+    <!-- HEADER MINIMALE CON LINK ESTERNI -->
+    <header class="site-header reveal">
+        <div class="logo"><a href="index.html">KORE.</a></div>
+        <nav class="nav-links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="architecture.html">Architecture</a>
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="vision.html">Vision</a>
+        </nav>
+        <div class="header-action">
+            <span class="mono-micro">SYS.04 // ACTIVE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- ACT I: HERO -->
+        <section class="section-hero">
+            <div class="container hero-content">
+                <h1 class="reveal delay-1">
+                    The power to change <br>
+                    <span class="serif-italic">the world</span> is hidden <br>
+                    in the code.
+                </h1>
+                <p class="subtitle reveal delay-2">
+                    Symbols add up to programs, and programs add up to innovations. <br>
+                    Your architecture is your future.
+                </p>
+                <div class="hero-metrics reveal delay-3">
+                    <div class="metric-item">
+                        <span class="metric-val" id="counter-latency">0.04</span>
+                        <span class="mono-micro">MS LATENCY</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">100%</span>
+                        <span class="mono-micro">DETERMINISTIC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator reveal delay-3">
+                <span class="mono-micro">SCROLL TO EXPLORE</span>
+                <div class="line-down"></div>
+            </div>
+        </section>
+
+        <!-- ACT II: MANIFESTO & HALFTONE INTERATTIVO -->
+        <section id="manifesto" class="section-manifesto">
+            <canvas id="halftone-canvas"></canvas>
+            <div class="container manifesto-content">
+                <h2 class="reveal">
+                    Nature doesn't guess.<br>
+                    <span class="serif-italic">Kore does not either.</span>
+                </h2>
+                <p class="reveal delay-1">
+                    Every output is driven by context, intent, and pure cognitive architecture. 
+                    We remove the friction between human thought and machine execution.
+                </p>
+            </div>
+        </section>
+
+        <!-- ACT III: THE VOID / CODE MATRIX -->
+        <section id="void" class="section-void">
+            <div class="void-center reveal">
+                <div class="black-hole"></div>
+                <div class="event-horizon"></div>
+            </div>
+            
+            <div class="code-stream left reveal delay-1">
+                <pre><code>fn execute_reality(ctx: Context) -> Result<(), Error> {
+    let mut spacetime = Matrix::new();
+    spacetime.collapse_wave_function();
+    if ctx.intent == Intent::Create {
+        spacetime.render(1.0);
+    }
+    Ok(())
+}</code></pre>
+            </div>
+
+            <div class="code-stream right reveal delay-2">
+                <pre><code>import { Quantum } from '@kore/core'
+
+const engine = new Quantum.Engine({
+    precision: 'absolute',
+    entropy: 0.0
+})
+await engine.initialize()</code></pre>
+            </div>
+
+            <div class="void-caption reveal delay-3">
+                <span class="mono-micro">[ THE EVENT HORIZON ]</span>
+                <h3>Where logic bends.</h3>
+            </div>
+        </section>
+
+        <!-- ACT IV: ADVANCED INTERACTIVE TABS (Paradigmi di Runtime) -->
+        <section class="section-tabs-hub">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">03 — MULTI-PARADIGM ENGINE</span>
+                    <h2>Choose Your <span class="serif-italic">Runtime</span></h2>
+                </div>
+
+                <div class="editorial-tabs-wrapper reveal delay-1">
+                    <div class="tab-triggers">
+                        <button class="t-btn active magnetic" data-target="rust-panel">
+                            <span class="mono-micro">01</span> Rust Native
+                        </button>
+                        <button class="t-btn magnetic" data-target="ts-panel">
+                            <span class="mono-micro">02</span> TypeScript Edge
+                        </button>
+                        <button class="t-btn magnetic" data-target="wgsl-panel">
+                            <span class="mono-micro">03</span> WGSL Compute
+                        </button>
+                    </div>
+
+                    <div class="tab-panels-viewport">
+                        <div class="t-panel active" id="rust-panel">
+                            <div class="panel-text">
+                                <h3>Zero-Cost Memory Abstraction</h3>
+                                <p>Executed directly on bare metal with mathematical safety guarantees and zero runtime garbage collection overhead.</p>
+                            </div>
+                            <div class="panel-code-box">
+                                <pre><code>pub async fn dispatch(cluster: &mut Cluster) -> Result&lt;Signal&gt; {
+    let core = cluster.mount_silicon().await?;
+    core.execute_pipeline();
+    Ok(Signal::Ready)
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="t-panel" id="ts-panel">
+                            <div class="panel-text">
+                                <h3>Type-Safe Distributed Edge</h3>
+                                <p>Ultra-fast serverless execution models with automatic fallback into compiled WebAssembly modules.</p>
+                            </div>
+                            <div class="panel-code-box">
+                                <pre><code>import { KoreCluster } from '@kore/native';
+
+const node = new KoreCluster({ mode: 'distributed' });
+await node.sync();
+console.log('Matrix fully synchronized.');</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="t-panel" id="wgsl-panel">
+                            <div class="panel-text">
+                                <h3>Parallel GPU Shaders</h3>
+                                <p>Compute pipelines handling millions of geometric calculations per frame directly via WebGPU hardware acceleration.</p>
+                            </div>
+                            <div class="panel-code-box">
+                                <pre><code>@compute @workgroup_size(64)
+fn main(@builtin(global_invocation_id) id: vec3&lt;u32&gt;) {
+    buffer[id.x] = compute_entropy(buffer[id.x]);
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT V: ARCHITECTURE / SPINE HUD (Blueprint Interattivo) -->
+        <section id="spine" class="section-spine">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">04 — NEURAL ARCHITECTURE DIAGNOSTICS</span>
+                    <h2>Structural <span class="serif-italic">Perfection</span></h2>
+                </div>
+
+                <div class="blueprint-grid reveal delay-1">
+                    <div class="blueprint-line h-line"></div>
+                    <div class="blueprint-line v-line"></div>
+
+                    <!-- Nodi interattivi che modificano un monitor di stato -->
+                    <div class="blueprint-node interactive-node active" data-node="alpha" style="top: 25%; left: 15%;">
+                        <div class="dot"></div>
+                        <div class="node-label">
+                            <span class="mono-micro">A // UPPER_SPINE</span>
+                            <h4>Cognitive Kernel</h4>
+                        </div>
+                    </div>
+
+                    <div class="blueprint-node interactive-node" data-node="beta" style="top: 55%; left: 50%;">
+                        <div class="dot"></div>
+                        <div class="node-label">
+                            <span class="mono-micro">B // SEPTAL_CORE</span>
+                            <h4>Distributed Mesh</h4>
+                        </div>
+                    </div>
+
+                    <div class="blueprint-node interactive-node" data-node="gamma" style="top: 75%; left: 80%;">
+                        <div class="dot"></div>
+                        <div class="node-label">
+                            <span class="mono-micro">C // LOWER_BUFFER</span>
+                            <h4>Zero-Latency I/O</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Diagnostic HUD Screen -->
+                <div class="hud-monitor reveal delay-2">
+                    <div class="monitor-topbar">
+                        <span class="mono-micro" id="hud-status-tag">STATUS: STREAM_STABLE</span>
+                        <span class="mono-micro">SECURE_CHANNEL</span>
+                    </div>
+                    <div class="monitor-body">
+                        <h3 id="hud-title">NODE_A // COGNITIVE KERNEL</h3>
+                        <p id="hud-desc">Allocating isolated memory shards at 0x7FFA. Direct silicon instruction pipeline initialized without virtualization lag.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT VI: GLASS REFRACTION -->
+        <section id="refraction" class="section-refraction">
+            <div class="container refraction-wrapper reveal">
+                <div class="refraction-card">
+                    <div class="glass-slice slice-1"></div>
+                    <div class="glass-slice slice-2"></div>
+                    <div class="glass-slice slice-3"></div>
+                    <div class="glass-slice slice-4"></div>
+                    <div class="glass-slice slice-5"></div>
+                    
+                    <div class="card-content">
+                        <h2>Revolutionize <br><span class="serif-italic">your stack.</span></h2>
+                        <p class="mono-micro">Powered by Kore V4.</p>
+                    </div>
+                </div>
+
+                <div class="refraction-text reveal delay-2">
+                    <h3>Optical Distortion Layers</h3>
+                    <p>Independent memory sectors stacked with real-time refraction mapping. Experience visual feedback that matches the actual sub-atomic precision of your software logic.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT VII: BY THE NUMBERS (Animated Count-Up Stats) -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">07 — VERIFIED AT SCALE</span>
+                    <h2>By the <span class="serif-italic">numbers.</span></h2>
+                </div>
+                <div class="stats-grid reveal delay-1">
+                    <div class="stat-cell">
+                        <span class="stat-number" data-countup="12.4" data-decimals="1" data-suffix="M">0</span>
+                        <span class="stat-label mono-micro">OPS / SECOND</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="stat-number" data-countup="99.999" data-decimals="3" data-suffix="%">0</span>
+                        <span class="stat-label mono-micro">UPTIME SLA</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="stat-number" data-countup="0" data-decimals="0" data-suffix="">0</span>
+                        <span class="stat-label mono-micro">GC PAUSES LOGGED</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="stat-number" data-countup="47" data-decimals="0" data-suffix="+">0</span>
+                        <span class="stat-label mono-micro">EDGE REGIONS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT VIII: FREQUENTLY ASKED QUESTIONS -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">08 — CLARIFICATIONS</span>
+                    <h2>Frequently <span class="serif-italic">Asked.</span></h2>
+                </div>
+
+                <div class="accordion-list reveal delay-1">
+                    <div class="accordion-item open">
+                        <button class="accordion-trigger">
+                            <span>Is Kore a framework, a runtime, or a language?</span>
+                            <span class="acc-icon"></span>
+                        </button>
+                        <div class="accordion-body" style="max-height: 200px;">
+                            <div class="accordion-body-inner">
+                                Kore is a deterministic runtime with a native Rust kernel, a TypeScript edge layer, and a WGSL compute path. It replaces the framework layer entirely rather than sitting on top of one.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">
+                            <span>Why no garbage collector?</span>
+                            <span class="acc-icon"></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-body-inner">
+                                GC pauses are the single largest source of latency variance in production systems. Kore's memory model is resolved entirely at compile time, so there is nothing left for a collector to do at runtime.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">
+                            <span>Can I migrate an existing service incrementally?</span>
+                            <span class="acc-icon"></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-body-inner">
+                                Yes. The TypeScript Edge runtime is designed as a drop-in gateway in front of legacy services, so teams typically migrate one route at a time before moving hot paths to the native kernel.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">
+                            <span>What does "deterministic" actually guarantee?</span>
+                            <span class="acc-icon"></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-body-inner">
+                                Given the same input state, a Kore node produces the same output and the same timing profile every time — no branch introduced by scheduling, allocation, or collection is allowed to leak into observable behavior.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT IX: THE TORUS ECOSYSTEM -->
+        <section class="section-torus">
+            <div class="torus-container reveal">
+                <div class="torus-glow"></div>
+                <h2>The continuous <span class="serif-italic">loop.</span></h2>
+                <a href="ecosystem.html" class="elegant-btn magnetic">Explore Ecosystem</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer reveal">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h1>KORE.</h1>
+                <p>Elegance in artificial computation.</p>
+            </div>
+            
+            <div class="footer-links">
+                <span class="mono-micro">INDEX</span>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="ecosystem.html">Ecosystem</a>
+                <a href="vision.html">Vision</a>
+            </div>
+
+            <div class="footer-links">
+                <span class="mono-micro">NETWORK</span>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://awwwards.com" target="_blank">Awwwards</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="mono-micro">© 2026 KORE INC.</span>
+            <span class="mono-micro">ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

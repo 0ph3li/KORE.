@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision — KORE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <!-- Three.js per la grafica 3D in tempo reale -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="vision-custom.css">
+</head>
+<body class="luxury-dark">
+
+    <div class="hololens-cone" id="light-cone"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="site-header reveal">
+        <div class="logo"><a href="index.html">KORE.</a></div>
+        <nav class="nav-links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="architecture.html">Architecture</a>
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="vision.html" class="active-link" style="color: #fff;">Vision</a>
+        </nav>
+        <div class="header-action">
+            <span class="mono-micro pulse-glow">SYS.VISION // HORIZON_2030</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- ACT I: 3D VIEWPORT HERO -->
+        <section class="vision-hero-3d">
+            <div class="container vision-hero-grid">
+                <div>
+                    <span class="mono-micro reveal">01 — THE 2030 HORIZON</span>
+                    <h1 class="reveal delay-1">
+                        Computing beyond <br>
+                        <span class="serif-italic">human limits</span> <br>
+                        in immersive 3D.
+                    </h1>
+                    <p class="subtitle reveal delay-2">
+                        We are engineering the transition from flat digital interfaces to spatial, deterministic silicon substrates that mirror the structure of human consciousness.
+                    </p>
+                    
+                    <!-- Controlli 3D interattivi -->
+                    <div class="vision-3d-controls reveal delay-3">
+                        <button class="v-btn active magnetic" data-geo="torus">Morph: Torus Knot</button>
+                        <button class="v-btn magnetic" data-geo="sphere">Morph: Cyber Sphere</button>
+                        <button class="v-btn magnetic" data-geo="icosahedron">Morph: Crystal Matrix</button>
+                    </div>
+
+                    <!-- Controlli fini: velocità rotazione e colore -->
+                    <div class="vision-fine-controls reveal delay-3">
+                        <div class="fine-control">
+                            <span class="mono-micro">ROTATION SPEED</span>
+                            <input type="range" id="rotation-speed-slider" min="0" max="5" step="0.1" value="1">
+                        </div>
+                        <div class="fine-control">
+                            <span class="mono-micro">WIREFRAME COLOR</span>
+                            <div class="color-swatches">
+                                <button class="color-swatch active" data-color="#ffffff" style="background:#ffffff;"></button>
+                                <button class="color-swatch" data-color="#4a6fa5" style="background:#4a6fa5;"></button>
+                                <button class="color-swatch" data-color="#cc1122" style="background:#cc1122;"></button>
+                                <button class="color-swatch" data-color="#22cc88" style="background:#22cc88;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Viewport del canvas 3D -->
+                <div class="reveal delay-2 three-canvas-container" id="canvas-3d-wrapper">
+                    <canvas id="kore-3d-canvas"></canvas>
+                    <div class="canvas-hud-overlay">
+                        <span class="mono-micro">RENDER ENGINE: WEBGL / THREE.JS</span>
+                        <span class="mono-micro text-white" id="fps-counter">FPS: 60</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT II: IL MANIFESTO DEL FUTURO -->
+        <section class="vision-manifesto-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">02 — THE SINGULARITY BLUEPRINT</span>
+                    <h2>Three Pillars of <br><span class="serif-italic">Tomorrow's Tech</span></h2>
+                </div>
+
+                <div class="vision-grid reveal delay-1">
+                    <div class="v-card" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">01 // SPATIAL INTERACTION</span>
+                        <h3>Neural UI & Spatial Mesh</h3>
+                        <p>Moving away from screens and windows into volumetric computing spaces where digital objects behave with real-world physics and absolute precision.</p>
+                    </div>
+
+                    <div class="v-card" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">02 // AUTONOMOUS AI SYNTHESIS</span>
+                        <h3>Self-Evolving Codebase</h3>
+                        <p>Compilers that rewrite and optimize their own instruction sets in real time based on user cognitive patterns and hardware thermal efficiency.</p>
+                    </div>
+
+                    <div class="v-card" data-spotlight data-tilt>
+                        <div class="spotlight-layer"></div>
+                        <span class="mono-micro">03 // QUANTUM DETERMINISM</span>
+                        <h3>Zero-Entropy Substrates</h3>
+                        <p>Bridging classical silicon resilience with quantum-state predictability to achieve infinite computational scalability without latency degradation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT III: THE ROADMAP TO 2031 (Scroll-Linked Timeline) -->
+        <section class="roadmap-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">03 — THE PATH FORWARD</span>
+                    <h2>Roadmap to <span class="serif-italic">2031</span></h2>
+                </div>
+
+                <div class="roadmap-track">
+                    <div class="roadmap-line"></div>
+
+                    <div class="roadmap-milestone reveal">
+                        <div class="rm-dot"></div>
+                        <span class="mono-micro">2026</span>
+                        <h3>Deterministic Core GA</h3>
+                        <p>General availability of the Rust kernel and TypeScript edge layer, with zero-GC guarantees validated across production workloads.</p>
+                    </div>
+
+                    <div class="roadmap-milestone reveal delay-1">
+                        <div class="rm-dot"></div>
+                        <span class="mono-micro">2027</span>
+                        <h3>Sub-Atomic Mesh v2</h3>
+                        <p>Global consensus latency drops below the speed-of-light fiber floor for same-continent clusters via predictive pre-sync.</p>
+                    </div>
+
+                    <div class="roadmap-milestone reveal delay-2">
+                        <div class="rm-dot"></div>
+                        <span class="mono-micro">2028</span>
+                        <h3>Spatial Interface Beta</h3>
+                        <p>The first volumetric Kore UI ships, rendering application state directly into shared physical space instead of a screen.</p>
+                    </div>
+
+                    <div class="roadmap-milestone reveal delay-3">
+                        <div class="rm-dot"></div>
+                        <span class="mono-micro">2029 — 2030</span>
+                        <h3>Self-Optimizing Compiler</h3>
+                        <p>The toolchain begins rewriting its own hot paths at runtime, informed by live thermal and cognitive-load telemetry.</p>
+                    </div>
+
+                    <div class="roadmap-milestone reveal delay-4">
+                        <div class="rm-dot pulse"></div>
+                        <span class="mono-micro">2031</span>
+                        <h3>Quantum-Ready Substrate</h3>
+                        <p>Classical determinism bridges into quantum-state predictability, targeting infinite horizontal scale without latency drift.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT IV: IL GRAN FINALE DEL TORUS (Ritorno alla Home) -->
+        <section class="section-torus">
+            <div class="torus-container reveal">
+                <div class="torus-glow"></div>
+                <h2>The cycle is complete. <br><span class="serif-italic">Begin the journey again.</span></h2>
+                <a href="index.html" class="elegant-btn magnetic">Return to KORE Core</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer reveal">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h1>KORE.</h1>
+                <p>Elegance in artificial computation.</p>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">INDEX</span>
+                <a href="index.html">Home</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="ecosystem.html">Ecosystem</a>
+                <a href="vision.html">Vision</a>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">NETWORK</span>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="mono-micro">© 2026 KORE INC.</span>
+            <span class="mono-micro">ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script src="vision.js"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+/* ==========================================================================
+   DESIGN SYSTEM - LUXURY EDITORIAL TECH (Expanded & Animated)
+   ========================================================================== */
+:root {
+    --bg-color: #030303;
+    --text-primary: #f2f2f2;
+    --text-muted: #888888;
+    
+    --accent-red: #cc1122;
+    --accent-blue: #4a6fa5;
+    
+    --border-thin: 1px solid rgba(255, 255, 255, 0.08);
+    
+    --font-serif: 'Instrument Serif', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.luxury-dark {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+.serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.mono-micro {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+}
+
+/* Texture rumore di fondo */
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 5vw;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(3, 3, 3, 0.5);
+    border-bottom: var(--border-thin);
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3vw;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+/* ==========================================================================
+   ACT I: HERO
+   ========================================================================== */
+.section-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hololens-cone {
+    position: fixed;
+    top: 50%; left: 50%;
+    width: 80vw; height: 80vw;
+    background: radial-gradient(circle at center, rgba(74, 111, 165, 0.12) 0%, rgba(0, 0, 0, 0) 60%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(60px);
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-content .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hero-metrics {
+    display: flex;
+    gap: 4rem;
+}
+
+.metric-item .metric-val {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.line-down {
+    width: 1px;
+    height: 40px;
+    background-color: var(--text-muted);
+    animation: scaleLine 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: top;
+}
+
+@keyframes scaleLine {
+    0% { transform: scaleY(0); }
+    50% { transform: scaleY(1); }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ==========================================================================
+   ACT II: MANIFESTO & HALFTONE
+   ========================================================================== */
+.section-manifesto {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    border-top: var(--border-thin);
+}
+
+#halftone-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.manifesto-content h2 {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.manifesto-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   ACT III: THE VOID
+   ========================================================================== */
+.section-void {
+    height: 140vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #0a0a0a 0%, var(--bg-color) 70%);
+}
+
+.void-center {
+    position: relative;
+    width: 400px; height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black-hole {
+    width: 200px; height: 200px;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(255,255,255,0.1), 0 0 100px rgba(0,0,0,1);
+    z-index: 2;
+}
+
+.event-horizon {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: spin 10s linear infinite;
+    filter: blur(10px);
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.code-stream {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.4;
+    white-space: pre;
+}
+
+.code-stream.left { top: 20%; left: 10%; }
+.code-stream.right { bottom: 20%; right: 10%; text-align: right; }
+
+.void-caption {
+    position: absolute;
+    bottom: 10vh;
+    text-align: center;
+}
+
+.void-caption h3 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   ACT IV: EDITORIAL TABS HUB (Nuova Sezione Interattiva)
+   ========================================================================== */
+.section-tabs-hub {
+    padding: 15vh 0;
+    background: #050505;
+    border-top: var(--border-thin);
+}
+
+.editorial-tabs-wrapper {
+    margin-top: 4rem;
+    border: var(--border-thin);
+    background: rgba(10, 10, 10, 0.6);
+}
+
+.tab-triggers {
+    display: flex;
+    border-bottom: var(--border-thin);
+}
+
+.t-btn {
+    flex: 1;
+    padding: 1.5rem;
+    background: transparent;
+    border: none;
+    border-right: var(--border-thin);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.t-btn:last-child { border-right: none; }
+
+.t-btn.active, .t-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.t-btn.active {
+    border-bottom: 2px solid #fff;
+}
+
+.tab-panels-viewport {
+    padding: 4rem;
+    min-height: 320px;
+}
+
+.t-panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.t-panel.active {
+    display: grid;
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel-text h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.panel-text p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.panel-code-box pre {
+    background: #000;
+    padding: 2rem;
+    border: var(--border-thin);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #a0aec0;
+    overflow-x: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   ACT V: ARCHITECTURE HUD BLUEPRINT
+   ========================================================================== */
+.section-spine {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+.spine-header h2 { font-size: 4rem; font-weight: 300; margin-top: 10px; }
+
+.blueprint-grid {
+    position: relative;
+    height: 50vh;
+    border: var(--border-thin);
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    margin-bottom: 3rem;
+}
+
+.blueprint-line {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+}
+.h-line { top: 50%; left: 0; width: 100%; height: 1px; }
+.v-line { left: 40%; top: 0; height: 100%; width: 1px; }
+
+.blueprint-node {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.blueprint-node:hover { transform: translate(-50%, -50%) scale(1.05); }
+
+.blueprint-node .dot {
+    width: 10px; height: 10px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #030303, 0 0 0 4px rgba(255,255,255,0.15);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.blueprint-node.active .dot {
+    background: #fff;
+    box-shadow: 0 0 0 1px #030303, 0 0 0 6px rgba(255,255,255,0.4);
+}
+
+.node-label h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.hud-monitor {
+    background: rgba(10, 10, 10, 0.8);
+    border: var(--border-thin);
+    padding: 2.5rem;
+    backdrop-filter: blur(15px);
+}
+
+.monitor-topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: var(--border-thin);
+}
+
+.monitor-body h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+    color: #fff;
+}
+
+.monitor-body p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ACT VI: GLASS REFRACTION
+   ========================================================================== */
+.section-refraction {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.refraction-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    align-items: center;
+}
+
+.refraction-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: #111;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: var(--border-thin);
+}
+
+.glass-slice {
+    position: absolute;
+    top: 0; bottom: 0;
+    background: linear-gradient(180deg, var(--accent-red), #000);
+    opacity: 0.25;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+}
+
+.slice-1 { left: 0%; width: 20%; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+.slice-2 { left: 20%; width: 20%; clip-path: polygon(0 0, 100% 10px, 100% 100%, 0 calc(100% - 10px)); background: linear-gradient(180deg, #aa0011, #000); }
+.slice-3 { left: 40%; width: 20%; clip-path: polygon(0 10px, 100% 5px, 100% 100%, 0 100%); transform: translateY(-15px); }
+.slice-4 { left: 60%; width: 20%; clip-path: polygon(0 5px, 100% 20px, 100% 100%, 0 100%); }
+.slice-5 { left: 80%; width: 20%; }
+
+.refraction-card:hover .slice-3 { transform: translateY(0); }
+.refraction-card:hover .slice-2 { transform: translateY(20px); }
+
+.card-content { z-index: 2; }
+.card-content h2 { font-size: 3.5rem; line-height: 1; margin-bottom: 1rem; }
+
+.refraction-text h3 { font-size: 2rem; font-weight: 300; margin-bottom: 1rem; }
+.refraction-text p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+
+/* ==========================================================================
+   ACT VII: TORUS ECOSYSTEM
+   ========================================================================== */
+.section-torus {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: var(--border-thin);
+    position: relative;
+    overflow: hidden;
+}
+
+.torus-glow {
+    position: absolute;
+    width: 600px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(74, 111, 165, 0.3);
+    box-shadow: 0 0 100px rgba(74, 111, 165, 0.2), inset 0 0 50px rgba(74, 111, 165, 0.1);
+    transform: rotateX(75deg);
+    top: 20%;
+    animation: breathe 8s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+    0% { transform: rotateX(75deg) scale(1); }
+    100% { transform: rotateX(75deg) scale(1.1); }
+}
+
+.section-torus h2 { font-size: 4rem; font-weight: 300; margin-bottom: 2.5rem; position: relative; z-index: 2; }
+
+.elegant-btn {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.elegant-btn:hover { transform: scale(1.05); background: #e0e0e0; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+    border-top: var(--border-thin);
+    padding: 8vh 0 4vh 0;
+    background: #020202;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4vw;
+    margin-bottom: 8vh;
+}
+
+.footer-brand h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
+.footer-brand p { color: var(--text-muted); font-size: 0.9rem; }
+
+.footer-links { display: flex; flex-direction: column; gap: 15px; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+.footer-links a:hover { color: #fff; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: var(--border-thin);
+    padding-top: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .refraction-wrapper { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .spine-header h2 { font-size: 2.5rem; }
+    .t-panel { grid-template-columns: 1fr; gap: 2rem; }
+    .tab-triggers { flex-direction: column; }
+}

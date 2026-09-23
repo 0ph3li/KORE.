@@ -1,0 +1,181 @@
+/* ==========================================================================
+   SHARED — Cross-page animation & interaction utilities
+   (progress bar, custom cursor, magnetic buttons, count-up, tilt, accordion)
+   ========================================================================== */
+
+/* Scroll progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-blue), #fff);
+    z-index: 10000;
+    transition: width 0.05s linear;
+}
+
+/* Custom cursor */
+.cursor-dot {
+    position: fixed;
+    top: 0; left: 0;
+    width: 8px; height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    mix-blend-mode: difference;
+}
+
+.cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, opacity 0.3s;
+    mix-blend-mode: difference;
+}
+
+.cursor-ring.cursor-hover {
+    width: 60px; height: 60px;
+    border-color: rgba(255,255,255,0.9);
+}
+
+@media (hover: none), (max-width: 900px) {
+    .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* Magnetic buttons */
+.magnetic {
+    display: inline-block;
+    will-change: transform;
+    transition: transform 0.15s ease-out;
+}
+
+/* Tilt cards */
+[data-tilt] {
+    will-change: transform;
+    transition: transform 0.15s ease-out, border-color 0.3s;
+    transform-style: preserve-3d;
+}
+
+/* Count-up numbers */
+[data-countup] {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   Generic Accordion
+   ========================================================================== */
+.accordion-list {
+    display: flex;
+    flex-direction: column;
+    border-top: var(--border-thin);
+}
+
+.accordion-item {
+    border-bottom: var(--border-thin);
+}
+
+.accordion-trigger {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    text-align: left;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: 300;
+    gap: 2rem;
+}
+
+.accordion-trigger .acc-icon {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    position: relative;
+}
+
+.accordion-trigger .acc-icon::before,
+.accordion-trigger .acc-icon::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s;
+}
+
+.accordion-trigger .acc-icon::before { width: 100%; height: 1px; }
+.accordion-trigger .acc-icon::after { width: 1px; height: 100%; }
+
+.accordion-item.open .acc-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-body-inner {
+    padding-bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+/* ==========================================================================
+   Stat / count-up grid (used on Home)
+   ========================================================================== */
+.stats-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+    background: rgba(255,255,255,0.08);
+}
+
+.stat-cell {
+    background: #030303;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.stat-cell .stat-number {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.stat-cell .stat-label {
+    color: var(--text-muted);
+}
+
+/* FAQ section */
+.faq-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+@media (max-width: 900px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .accordion-trigger { font-size: 1.05rem; }
+}

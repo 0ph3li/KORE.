@@ -1,0 +1,376 @@
+/* ==========================================================================
+   PHILOSOPHY PAGE - ADVANCED ANIMATIONS & STYLES
+   ========================================================================== */
+
+.phil-hero-extended {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 15vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.phil-hero-extended h1 {
+    font-size: clamp(3rem, 6.5vw, 6.5rem);
+    line-height: 0.95;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.phil-hero-extended .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Ticker Infinito Animato */
+.infinite-ticker-container {
+    margin-top: 8vh;
+    border-top: var(--border-thin);
+    border-bottom: var(--border-thin);
+    padding: 1.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(5, 5, 5, 0.8);
+}
+
+.ticker-track {
+    display: inline-block;
+    animation: scrollTicker 25s linear infinite;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+}
+
+.ticker-track span {
+    margin: 0 2rem;
+}
+
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pillastri del Manifesto con Spotlight Hover */
+.phil-manifesto-deep {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.pillars-grid-animated {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.pillar-card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.6);
+    border: var(--border-thin);
+    padding: 3.5rem;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+}
+
+.pillar-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.spotlight-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.04), transparent 40%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pillar-card:hover .spotlight-layer { opacity: 1; }
+
+.pillar-card h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 1.2rem 0;
+}
+
+.pillar-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.pillar-code-preview {
+    background: #000;
+    border: var(--border-thin);
+    padding: 1rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #fff;
+}
+
+/* Laboratorio dell'Entropia */
+.entropy-lab-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+.entropy-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+}
+
+.entropy-layout h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+.phil-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.lab-controls {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.lab-btn {
+    background: transparent;
+    border: var(--border-thin);
+    color: var(--text-muted);
+    padding: 1rem 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.lab-btn.active, .lab-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+.lab-monitor-box {
+    background: rgba(8, 8, 8, 0.95);
+    border: var(--border-thin);
+    padding: 2.5rem;
+}
+
+.lab-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--border-thin);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.pulsing-led {
+    width: 8px; height: 8px;
+    background: #22cc44;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #22cc44;
+    animation: pulseLed 2s infinite alternate;
+}
+
+@keyframes pulseLed {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+.lab-screen pre {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+/* Timeline Storica */
+.phil-timeline-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.timeline-stream {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 4vw;
+    align-items: start;
+    border-bottom: var(--border-thin);
+    padding-bottom: 4rem;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.t-body h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.t-body p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* Sezione Citazione finale */
+.quote-canvas-section {
+    padding: 20vh 0;
+    border-top: var(--border-thin);
+    text-align: center;
+    position: relative;
+}
+
+.quote-content-center blockquote {
+    font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    max-width: 1000px;
+    margin: 2rem auto;
+    letter-spacing: -1px;
+}
+
+.author-tag {
+    margin-top: 3rem;
+}
+
+.pulse-glow {
+    animation: textGlow 3s infinite alternate;
+}
+
+@keyframes textGlow {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+}
+
+/* Counter-Argument Debate Section */
+.debate-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.debate-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    border: var(--border-thin);
+    background: rgba(8, 8, 8, 0.6);
+    margin-top: 4rem;
+}
+
+.debate-triggers {
+    display: flex;
+    flex-direction: column;
+    border-right: var(--border-thin);
+}
+
+.debate-btn {
+    padding: 2rem;
+    background: transparent;
+    border: none;
+    border-bottom: var(--border-thin);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.debate-btn:last-child { border-bottom: none; }
+
+.debate-btn h4 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 6px;
+    transition: color 0.3s;
+}
+
+.debate-btn.active, .debate-btn:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.debate-btn.active h4 { color: #fff; }
+.debate-btn.active { border-left: 2px solid #fff; }
+
+.debate-viewer {
+    padding: 4rem;
+    position: relative;
+}
+
+.debate-pane {
+    display: none;
+    animation: fadeInPane 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.debate-pane.active { display: block; }
+
+@keyframes fadeInPane {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.debate-pane h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.debate-pane > p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+.debate-verdict {
+    border-top: var(--border-thin);
+    padding-top: 1.8rem;
+}
+
+.debate-verdict p {
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .pillars-grid-animated, .entropy-layout, .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .debate-wrapper { grid-template-columns: 1fr; }
+    .debate-triggers { flex-direction: row; }
+    .debate-viewer { padding: 2.5rem; }
+}

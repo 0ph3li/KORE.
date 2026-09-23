@@ -1,0 +1,340 @@
+/* ==========================================================================
+   ARCHITECTURE PAGE - CYBERNETIC HARDWARE HUD & STYLES
+   ========================================================================== */
+
+.arch-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 15vh;
+}
+
+.arch-hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 6vw;
+    align-items: center;
+}
+
+.arch-hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 6rem);
+    line-height: 0.95;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.arch-hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.arch-telemetry-box {
+    background: rgba(10, 10, 10, 0.85);
+    border: var(--border-thin);
+    padding: 2.5rem;
+    backdrop-filter: blur(15px);
+}
+
+.telemetry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--border-thin);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.pulsing-led {
+    width: 8px; height: 8px;
+    background: #22cc44;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #22cc44;
+    animation: pulseLed 2s infinite alternate;
+}
+
+@keyframes pulseLed {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+.telemetry-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.t-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-white { color: #fff; }
+.text-red { color: var(--accent-red); }
+
+/* Layers Explorer Section */
+.arch-layers-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.layers-explorer {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    border: var(--border-thin);
+    background: rgba(8, 8, 8, 0.6);
+    margin-top: 4rem;
+}
+
+.layer-triggers {
+    display: flex;
+    flex-direction: column;
+    border-right: var(--border-thin);
+}
+
+.layer-btn {
+    padding: 2rem;
+    background: transparent;
+    border: none;
+    border-bottom: var(--border-thin);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.layer-btn:last-child { border-bottom: none; }
+
+.layer-btn h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 5px;
+    transition: color 0.3s;
+}
+
+.layer-btn.active, .layer-btn:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.layer-btn.active h4 { color: #fff; }
+.layer-btn.active { border-left: 2px solid #fff; }
+
+.layer-viewer {
+    padding: 4rem;
+    position: relative;
+}
+
+.layer-pane {
+    display: none;
+    animation: fadeInPane 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.layer-pane.active { display: block; }
+
+@keyframes fadeInPane {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pane-tag {
+    margin-bottom: 1.5rem;
+}
+
+.layer-pane h3 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.layer-pane p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.code-box-arch pre {
+    background: #000;
+    border: var(--border-thin);
+    padding: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #a0aec0;
+    overflow-x: auto;
+}
+
+/* Topology Interactive Canvas Section */
+.arch-topology-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+.topology-wrapper {
+    position: relative;
+    height: 60vh;
+    border: var(--border-thin);
+    background: #040404;
+    margin-top: 4rem;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+#topology-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.topology-overlay-ui {
+    position: absolute;
+    bottom: 2rem; left: 2rem;
+    background: rgba(3, 3, 3, 0.85);
+    border: var(--border-thin);
+    padding: 1.5rem 2rem;
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+}
+
+.topology-overlay-ui h3 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 5px 0 10px 0;
+}
+
+/* Benchmark Section */
+.arch-benchmark-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.benchmark-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.bench-card {
+    background: rgba(10, 10, 10, 0.6);
+    border: var(--border-thin);
+    padding: 4rem;
+}
+
+.bench-card h3 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-family: var(--font-mono);
+    margin: 1.5rem 0 1rem 0;
+}
+
+.bench-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.highlight-bench {
+    background: rgba(20, 20, 20, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Live System Log Terminal */
+.arch-terminal-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+.phil-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    max-width: 650px;
+}
+
+.terminal-box {
+    margin-top: 4rem;
+    background: #000;
+    border: var(--border-thin);
+    overflow: hidden;
+}
+
+.terminal-topbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: #0a0a0a;
+    border-bottom: var(--border-thin);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-dots span {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #333;
+}
+
+.terminal-topbar .mono-micro {
+    flex: 1;
+}
+
+.terminal-actions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.term-btn {
+    background: transparent;
+    border: var(--border-thin);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.term-btn:hover, .term-btn.active {
+    color: #fff;
+    border-color: #fff;
+}
+
+.terminal-body {
+    height: 320px;
+    overflow-y: auto;
+    padding: 1.5rem 2rem;
+}
+
+.terminal-body pre {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #7fdc7f;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-body::-webkit-scrollbar { width: 6px; }
+.terminal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
+
+/* Draggable topology nodes cursor feedback */
+.topology-wrapper.dragging-node { cursor: grabbing; }
+
+@media (max-width: 900px) {
+    .arch-hero-grid, .layers-explorer, .benchmark-grid {
+        grid-template-columns: 1fr;
+    }
+    .layer-triggers { border-right: none; border-bottom: var(--border-thin); }
+}

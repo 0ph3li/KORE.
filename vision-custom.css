@@ -1,0 +1,255 @@
+/* ==========================================================================
+   VISION PAGE - 3D WEBGL VIEWPORT & STYLES
+   ========================================================================== */
+
+.vision-hero-3d {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-top: 15vh;
+}
+
+.vision-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: 5vw;
+    align-items: center;
+}
+
+.vision-hero-3d h1 {
+    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    line-height: 0.95;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.vision-hero-3d .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.vision-3d-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.v-btn {
+    background: transparent;
+    border: var(--border-thin);
+    color: var(--text-muted);
+    padding: 0.8rem 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.v-btn.active, .v-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+/* Viewport 3D Canvas */
+.three-canvas-container {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    border: var(--border-thin);
+    background: rgba(4, 4, 4, 0.9);
+    overflow: hidden;
+}
+
+#kore-3d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.canvas-hud-overlay {
+    position: absolute;
+    top: 1.5rem; left: 1.5rem; right: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.text-white { color: #fff; }
+
+/* Manifesto Section */
+.vision-manifesto-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.v-card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.6);
+    border: var(--border-thin);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+}
+
+.v-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.spotlight-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.04), transparent 40%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.v-card:hover .spotlight-layer { opacity: 1; }
+
+.v-card h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+.v-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Fine 3D Controls (rotation speed + color) */
+.vision-fine-controls {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.fine-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.fine-control input[type="range"] {
+    -webkit-appearance: none;
+    width: 160px;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    outline: none;
+}
+
+.fine-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.fine-control input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.3); }
+
+.color-swatches {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.color-swatch {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-swatch.active {
+    border-color: rgba(255,255,255,0.8);
+    transform: scale(1.15);
+}
+
+/* Roadmap Timeline */
+.roadmap-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+.roadmap-track {
+    position: relative;
+    margin-top: 5rem;
+    padding-left: 3rem;
+}
+
+.roadmap-line {
+    position: absolute;
+    top: 0; bottom: 0; left: 3px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.03));
+}
+
+.roadmap-milestone {
+    position: relative;
+    padding-bottom: 4.5rem;
+}
+
+.roadmap-milestone:last-child { padding-bottom: 0; }
+
+.rm-dot {
+    position: absolute;
+    left: -3.35rem;
+    top: 6px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    box-shadow: 0 0 0 4px #030303;
+}
+
+.rm-dot.pulse {
+    background: #fff;
+    animation: pulseLed 2s infinite alternate;
+}
+
+@keyframes pulseLed {
+    0% { opacity: 0.5; box-shadow: 0 0 0 4px #030303, 0 0 0 4px #030303; }
+    100% { opacity: 1; box-shadow: 0 0 0 4px #030303, 0 0 14px rgba(255,255,255,0.6); }
+}
+
+.roadmap-milestone h3 {
+    font-size: 1.7rem;
+    font-weight: 300;
+    margin: 0.6rem 0 0.8rem 0;
+}
+
+.roadmap-milestone p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 650px;
+}
+
+@media (max-width: 900px) {
+    .vision-hero-grid, .vision-grid {
+        grid-template-columns: 1fr;
+    }
+    .roadmap-track { padding-left: 2rem; }
+    .rm-dot { left: -2.35rem; }
+}

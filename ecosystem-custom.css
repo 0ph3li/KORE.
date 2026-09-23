@@ -1,0 +1,326 @@
+/* ==========================================================================
+   ECOSYSTEM PAGE - MODULAR ASSEMBLER & DIRECTORY STYLES
+   ========================================================================== */
+
+.eco-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 15vh;
+}
+
+.eco-hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 6vw;
+    align-items: center;
+}
+
+.eco-hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 6rem);
+    line-height: 0.95;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.eco-hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.eco-stat-box {
+    background: rgba(10, 10, 10, 0.85);
+    border: var(--border-thin);
+    padding: 2.5rem;
+    backdrop-filter: blur(15px);
+}
+
+.eco-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--border-thin);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.eco-stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.e-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-white { color: #fff; }
+
+/* Assembler Workspace Section */
+.eco-assembler-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+    background: #050505;
+}
+
+.eco-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+.assembler-workspace {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    margin-top: 4rem;
+    align-items: start;
+}
+
+.modules-selector-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mod-toggle-card {
+    background: rgba(10, 10, 10, 0.6);
+    border: var(--border-thin);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mod-toggle-card h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 3px;
+    transition: color 0.3s;
+}
+
+.mod-check {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: #000;
+    padding: 0.5rem 0.8rem;
+    border: var(--border-thin);
+    transition: all 0.3s;
+}
+
+.mod-toggle-card.active {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.mod-toggle-card.active h4 { color: #fff; }
+.mod-toggle-card.active .mod-check {
+    color: #000;
+    background: #fff;
+    border-color: #fff;
+    font-weight: 500;
+}
+
+.manifest-output-box {
+    background: rgba(8, 8, 8, 0.95);
+    border: var(--border-thin);
+    padding: 2.5rem;
+}
+
+.manifest-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--border-thin);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.copy-btn {
+    background: transparent;
+    border: var(--border-thin);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.manifest-output-box pre {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #a0aec0;
+    line-height: 1.6;
+}
+
+/* Packages Directory Section */
+.eco-packages-section {
+    padding: 15vh 0;
+    border-top: var(--border-thin);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.pkg-card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.6);
+    border: var(--border-thin);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+}
+
+.pkg-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.spotlight-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.04), transparent 40%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pkg-card:hover .spotlight-layer { opacity: 1; }
+
+.pkg-card h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+.pkg-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.pkg-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: var(--border-thin);
+    padding-top: 1.5rem;
+}
+
+.pkg-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.pkg-link:hover { opacity: 0.7; }
+
+/* Package Search Bar */
+.pkg-search-bar {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: var(--border-thin);
+    padding-bottom: 1.5rem;
+}
+
+.pkg-search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.pkg-search-bar input::placeholder {
+    color: var(--text-muted);
+}
+
+#pkg-search-count {
+    white-space: nowrap;
+}
+
+.pkg-card.pkg-hidden {
+    display: none;
+}
+
+.pkg-empty-state {
+    display: none;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 4rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.pkg-empty-state.visible { display: block; }
+
+/* Install command row */
+.pkg-install {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border: var(--border-thin);
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.pkg-install code {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #a0aec0;
+}
+
+.pkg-copy-btn {
+    background: transparent;
+    border: var(--border-thin);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.pkg-copy-btn:hover { color: #fff; border-color: #fff; }
+
+@media (max-width: 900px) {
+    .eco-hero-grid, .assembler-workspace, .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    .pkg-search-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}

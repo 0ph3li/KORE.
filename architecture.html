@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture — KORE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="architecture-custom.css">
+</head>
+<body class="luxury-dark">
+
+    <div class="hololens-cone" id="light-cone"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="site-header reveal">
+        <div class="logo"><a href="index.html">KORE.</a></div>
+        <nav class="nav-links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="architecture.html" class="active-link" style="color: #fff;">Architecture</a>
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="vision.html">Vision</a>
+        </nav>
+        <div class="header-action">
+            <span class="mono-micro pulse-glow">SYS.ARCH // TOPOLOGY_ACTIVE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- ACT I: HERO CON TELEMETRIA LIVE -->
+        <section class="arch-hero">
+            <div class="container arch-hero-grid">
+                <div>
+                    <span class="mono-micro reveal">01 — STRUCTURAL BLUEPRINT</span>
+                    <h1 class="reveal delay-1">
+                        The anatomy of <br>
+                        <span class="serif-italic">pure execution</span> <br>
+                        on bare silicon.
+                    </h1>
+                    <p class="subtitle reveal delay-2">
+                        Explore the multi-layered stack designed to bypass virtualization bloat, routing millions of concurrent calculations with absolute deterministic precision.
+                    </p>
+                </div>
+                <div class="reveal delay-3 arch-telemetry-box">
+                    <div class="telemetry-top">
+                        <span class="mono-micro">LIVE CLUSTER TELEMETRY</span>
+                        <div class="pulsing-led"></div>
+                    </div>
+                    <div class="telemetry-metrics">
+                        <div class="t-row">
+                            <span class="mono-micro">ACTIVE SHARDS</span>
+                            <span class="mono-micro text-white" id="telemetry-shards">1,024 / 1,024</span>
+                        </div>
+                        <div class="t-row">
+                            <span class="mono-micro">CPU FREQUENCY</span>
+                            <span class="mono-micro text-white">5.82 GHz (Locked)</span>
+                        </div>
+                        <div class="t-row">
+                            <span class="mono-micro">BUFFER DROP RATE</span>
+                            <span class="mono-micro text-white">0.000%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT II: INTERACTIVE LAYER STACK EXPLORER -->
+        <section class="arch-layers-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">02 — THE FOUR-TIER STACK</span>
+                    <h2>Interactive <span class="serif-italic">Layer Inspection</span></h2>
+                </div>
+
+                <div class="layers-explorer reveal delay-1">
+                    <!-- Trigger laterali -->
+                    <div class="layer-triggers">
+                        <button class="layer-btn active magnetic" data-layer="layer-0">
+                            <span class="mono-micro">TIER 04</span>
+                            <h4>Silicon Metal Substrate</h4>
+                        </button>
+                        <button class="layer-btn magnetic" data-layer="layer-1">
+                            <span class="mono-micro">TIER 03</span>
+                            <h4>Cognitive Rust Kernel</h4>
+                        </button>
+                        <button class="layer-btn magnetic" data-layer="layer-2">
+                            <span class="mono-micro">TIER 02</span>
+                            <h4>Distributed Mesh Routing</h4>
+                        </button>
+                        <button class="layer-btn magnetic" data-layer="layer-3">
+                            <span class="mono-micro">TIER 01</span>
+                            <h4>Zero-Latency Edge API</h4>
+                        </button>
+                    </div>
+
+                    <!-- Schermo di visualizzazione del layer -->
+                    <div class="layer-viewer">
+                        <div class="layer-pane active" id="layer-0">
+                            <div class="pane-tag"><span class="mono-micro">SUBSTRATE LEVEL // 0x00</span></div>
+                            <h3>Bare Metal Instruction Pipelines</h3>
+                            <p>Direct interaction with hardware registers using WebGPU compute shaders and custom assembly optimizations. Eliminates the operating system virtualization penalty entirely.</p>
+                            <div class="code-box-arch">
+                                <pre><code>@compute @workgroup_size(64)
+fn execute_metal(@builtin(global_invocation_id) id: vec3<u32>) {
+    let register = silicon.alloc_shard(id.x);
+    register.lock_immutable();
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="layer-pane" id="layer-1">
+                            <div class="pane-tag"><span class="mono-micro">KERNEL LEVEL // 0x01</span></div>
+                            <h3>Zero-Cost Rust Memory Core</h3>
+                            <p>Engineered entirely in Rust to ensure memory safety without runtime garbage collection pauses. Guarantees deterministic state execution under maximum load.</p>
+                            <div class="code-box-arch">
+                                <pre><code>pub async fn dispatch_kernel(cluster: &mut Cluster) -> Result<Signal> {
+    let core = cluster.mount_silicon().await?;
+    core.verify_determinism();
+    Ok(Signal::Locked)
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="layer-pane" id="layer-2">
+                            <div class="pane-tag"><span class="mono-micro">MESH LEVEL // 0x02</span></div>
+                            <h3>Sub-Atomic Peer-to-Peer Grid</h3>
+                            <p>Autonomous nodes synchronize state changes instantly across global regions using cryptographic consensus vectors with zero propagation delay.</p>
+                            <div class="code-box-arch">
+                                <pre><code>const mesh = new KoreMesh({
+    topology: 'fractal',
+    syncRate: 'sub-atomic',
+    entropy: 0.0
+});
+await mesh.deploy();</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="layer-pane" id="layer-3">
+                            <div class="pane-tag"><span class="mono-micro">INTERFACE LEVEL // 0x03</span></div>
+                            <h3>Sub-Millisecond Edge Gateway</h3>
+                            <p>Client requests hit localized edge nodes compiled to WebAssembly, returning responses before standard TCP handshakes can even complete.</p>
+                            <div class="code-box-arch">
+                                <pre><code>export default {
+    async fetch(req, env, ctx) {
+        return env.KORE_EDGE.dispatch(req);
+    }
+};</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT III: INTERACTIVE TOPOLOGY CANVAS (Mappa dei nodi viva) -->
+        <section class="arch-topology-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">03 — GLOBAL TOPOLOGY SIMULATOR</span>
+                    <h2>Neural Cluster <span class="serif-italic">Mesh Matrix</span></h2>
+                </div>
+
+                <div class="topology-wrapper reveal delay-1">
+                    <canvas id="topology-canvas"></canvas>
+                    <div class="topology-overlay-ui">
+                        <span class="mono-micro">[ INTERACTIVE MESH ]</span>
+                        <h3>Click anywhere to inject data packets</h3>
+                        <p class="mono-micro" id="packet-counter">PACKETS ROUTED: 0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT IV: LIVE SYSTEM LOG TERMINAL -->
+        <section class="arch-terminal-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">04 — REAL-TIME KERNEL TRACE</span>
+                    <h2>Live System <span class="serif-italic">Log</span></h2>
+                    <p class="phil-desc">A streaming trace of the cluster's kernel — pause it, clear it, or watch determinism unfold line by line.</p>
+                </div>
+
+                <div class="terminal-box reveal delay-1">
+                    <div class="terminal-topbar">
+                        <div class="terminal-dots"><span></span><span></span><span></span></div>
+                        <span class="mono-micro">kore-kernel@cluster-04 — live</span>
+                        <div class="terminal-actions">
+                            <button class="term-btn" id="term-pause-btn">PAUSE</button>
+                            <button class="term-btn" id="term-clear-btn">CLEAR</button>
+                        </div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <pre id="terminal-log"></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT V: HARDWARE BENCHMARK COMPARISON -->
+        <section class="arch-benchmark-section">
+            <div class="container">
+                <div class="spine-header reveal">
+                    <span class="mono-micro">05 — PERFORMANCE MATRIX</span>
+                    <h2>Deterministic <br><span class="serif-italic">Superiority</span></h2>
+                </div>
+
+                <div class="benchmark-grid reveal delay-1">
+                    <div class="bench-card" data-tilt>
+                        <span class="mono-micro text-red">LEGACY ARCHITECTURE</span>
+                        <h3 data-countup="45.2" data-decimals="1" data-suffix=" ms">0 ms</h3>
+                        <p>Average latency with unpredictable garbage collection spikes and thread locking bottlenecks.</p>
+                    </div>
+                    <div class="bench-card highlight-bench" data-tilt>
+                        <span class="mono-micro text-white">KORE SILICON STACK</span>
+                        <h3 data-countup="0.04" data-decimals="2" data-suffix=" ms">0 ms</h3>
+                        <p>Constant deterministic execution time with zero variance across infinite scaling loops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT VI: PROCEED TO ECOSYSTEM -->
+        <section class="section-torus">
+            <div class="torus-container reveal">
+                <div class="torus-glow"></div>
+                <h2>Explore the software <br><span class="serif-italic">ecosystem.</span></h2>
+                <a href="ecosystem.html" class="elegant-btn magnetic">Inspect Ecosystem</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer reveal">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h1>KORE.</h1>
+                <p>Elegance in artificial computation.</p>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">INDEX</span>
+                <a href="index.html">Home</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="ecosystem.html">Ecosystem</a>
+                <a href="vision.html">Vision</a>
+            </div>
+            <div class="footer-links">
+                <span class="mono-micro">NETWORK</span>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="mono-micro">© 2026 KORE INC.</span>
+            <span class="mono-micro">ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script src="architecture.js"></script>
+</body>
+</html>
